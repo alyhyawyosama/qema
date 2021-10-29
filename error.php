@@ -22,6 +22,7 @@ if ($error == 404) {
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body style="background-color:#E9ECEC ;">
+    <button>click</button>
 <div class="container-fluid" style="margin-top:15%">
     <div class="jumbotron text-center bg-light">
         <span style="font-size: 40px; color:red"><?php echo $errorMsg; ?></span>
