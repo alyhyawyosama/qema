@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="DataTables/DataTables-1.10.21/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="css/validation.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-2 d-sm-none"></div>
+          <div class="col-2    mb-3">
+            <a title='اضافة تاجر جديد' id='new_merchant_btn' style="font-family: janna lt;cursor: pointer; border:1px solid #3e64ff;width:200px; border-radius:4px;font-weight:600 ;color:#3e64ff" class='addNewBuildBtn btn bg-light mb-2 '  data-toggle='modal'  data-target='#modelmerchant' >
+              اضافة تاجر جديد  
+              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        
+        
+        
+      <table id="show_merchants" class="table  table-responsive-md  " style="width: 100%;" >
+        <thead>
+            <tr>
+                <th style="display:none"> </th>
+                <th style="width:10px"> </th>
+                <th>الاسم</th>
+                <th>الهاتف</th>
+                <th>التفاصيل </th>
+                <th>التاريخ </th>
+                <th>-</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+        
+
+      
+          <!-- ----------------- Start Modal to edit merchant data--------------- -->            
+
+
+          
+      
+          <!-- ----------------- End modal to edit merchants data--------------- --> 
+
+          <!-- ----------------- Start Modal to ADD new merchant--------------- -->            
+
+          <div class="modal fade" id="modelmerchant" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">اضافة تاجر جديد</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form  id="validate_form" >
+                          <div class="form-checks">
+                            <label for="merchant_name">الاسم:</label>
+                            <input type="text" name="merchant_name" required  placeholder="اسم التاجر " id="merchant_name">
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>رسالة خطأ</small>  
+                          </div>
+                            <label for="merchant_phone">رقم الهاتف:</label>
+                            <input type="number" name="merchant_phone" class="form-control " required placeholder="ادخل رقم الهاتف" id="merchant_phone">
+                            
+                            <label for="merchant_details">التفاصيل:</label>
+                            <textarea class="form-control " name="merchant_details" rows="1" id="merchant_details"></textarea>
+                            <label for="merchant_date" class="p-2">التاريخ:</label>
+                            <input type="date" class='input-group date ' name="merchant_date" id="merchant_date" >
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء </button>
+                              <input type="submit" id="submit" value="اضافة" class="btn btn-primary" name=" add_new_merchant_btn">
+                          </div>   
+                      </div>
+                    </form>
+
+              </div>
+            </div>
+          </div>
+          <!-- ----------------- End modal to ADD new merchant--------------- --> 
+
+
+
+
+          <!-- ----------------- End modal to Delete worker--------------- --> 
+
+        </tbody>
+        
+      </table>
+  </div>
+
+  </div>
+  </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+<script src="js/jquery.min.js"></script>
+<script src="js/parsley.js"></script>
+    <script src="DataTables/DataTables-1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="DataTables/DataTables-1.10.21/js/dataTables.bootstrap4.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+    <script>
+      
+    /* */
+    $(document).ready(function(){
+        $('#validate_form').parsley();
+
+        });  
+        
+    $(document).ready(function() {
+      $('#show_merchants').DataTable();
+  } );  
+
+    </script>
+</body>
+</html>
